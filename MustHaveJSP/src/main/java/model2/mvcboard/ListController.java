@@ -72,7 +72,7 @@ public class ListController extends HttpServlet {
 		req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, res);
 		
 		
-		res.getWriter().append("Served at: ").append(req.getContextPath());
+		//res.getWriter().append("Served at: ").append(req.getContextPath());
 	}
 
 }

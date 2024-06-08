@@ -17,7 +17,7 @@ public class MyELClass {
 	}
 	
 	//입력받은 문자열이 숫자인지 판별해준다.
-	public static boolean inNumber(String value) {
+	public static boolean isNumber(String value) {
 		char[] chArr = value.toCharArray();
 		for(int i=0; i<chArr.length;i++) {
 			if(!(chArr[i] >='0' && chArr[i] <='9')) {
@@ -35,7 +35,7 @@ public class MyELClass {
 			for(int i =2; i <= limitDan; i++) {
 				sb.append("<tr>");
 				for(int j=1; j<=9; j++) {
-					sb.append("<td>" + i + "*" + j +"="+ (i*j) +"</tb>");
+					sb.append("<td>" + i + "*" + j +"="+ (i*j) +"</td>");
 				}
 				sb.append("</tr>");
 			}

@@ -23,7 +23,8 @@ public class LifeCycle extends HttpServlet {
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
-	public void init(ServletConfig config) throws ServletException {
+//	 	public void init(ServletConfig config) throws ServletException {
+	public void init() throws ServletException {
 		System.out.println("init() 호출");
 	}
 

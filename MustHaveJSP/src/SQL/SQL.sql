@@ -25,6 +25,13 @@ CREATE TABLE mvcboard(
 	visitcount NUMBER DEFAULT 0 NOT NULL
 )
 
+CREATE SEQUENCE seq_board_num
+	INCREMENT BY 1
+	START WITH 1
+	MINVALUE 1
+	nomaxvalue
+	nocycle
+	nocache;
 
 INSERT INTO mvcboard (idx, name, title, content, pass)
 	values(seq_board_num.nextval, '김유신', '자료실 제목1 이다', '내용', '1234');
