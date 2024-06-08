@@ -12,8 +12,8 @@
 <%
 Date today = new Date();
 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-String todatStr = dateFormat.format(today);
-out.println("오늘 날짜 : " + todatStr);
+String todayStr = dateFormat.format(today);
+out.println("오늘 날짜 : " + todayStr);
 %>
 </body>
 </html>
