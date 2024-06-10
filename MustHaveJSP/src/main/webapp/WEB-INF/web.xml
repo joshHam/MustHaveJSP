@@ -9,12 +9,10 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  <!-- 컨텍스트 초기화 매개변수(예제 2-10) -->
   <context-param>
     <param-name>INIT_PARAM</param-name>
     <param-value>web.xml에 저장된 초기화 매개변수</param-value>
   </context-param>
-  <!-- 에러 페이지 처리하기(예제 2-12) -->
   <error-page>
     <error-code>404</error-code>
     <location>/02ImplicitObject/Exception.jsp</location>
@@ -27,7 +25,6 @@
     <error-code>500</error-code>
     <location>/02ImplicitObject/Exception.jsp</location>
   </error-page>
- <!-- 오라클 데이터베이스 접속 정보(예제 5-8) -->
   <context-param>
     <param-name>OracleDriver</param-name>
     <param-value>oracle.jdbc.OracleDriver</param-value>
@@ -44,12 +41,9 @@
     <param-name>OraclePwd</param-name>
     <param-value>1234</param-value>
   </context-param>
-  <!-- 세션 유지 시간 설정(예제 6-1) -->
   <session-config>
     <session-timeout>20</session-timeout>
   </session-config>
-  <!-- 한글 깨짐 방지를 위한 필터 설정(예제 7-9). Tomcat10.1에서는 필요없음.
-  Tomcat9.x 이하에서는 해당 설정이 없으면 post로 전송시 한글깨짐 현상 발생됨 -->
   <filter>
     <filter-name>SetCharEncoding</filter-name>
     <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
@@ -62,7 +56,6 @@
     <filter-name>SetCharEncoding</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  <!-- 게시판 페이징 처리를 위한 설정값(예제 9-3) -->
   <context-param>
     <param-name>POSTS_PER_PAGE</param-name>
     <param-value>10</param-value>
@@ -71,7 +64,6 @@
     <param-name>PAGES_PER_BLOCK</param-name>
     <param-value>5</param-value>
   </context-param>
-  <!-- 서블릿 매핑 1(예제 12-2) -->
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
@@ -82,7 +74,6 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/12Servlet/HelloServlet.do</url-pattern>
   </servlet-mapping>
-  <!-- 서블릿 매핑 2(예제 12-7) -->
   <servlet>
     <description></description>
     <display-name>DirectServletPrint</display-name>
@@ -93,8 +84,6 @@
     <servlet-name>DirectServletPrint</servlet-name>
     <url-pattern>/12Servlet/DirectServletPrint.do</url-pattern>
   </servlet-mapping>
-  
-    <!-- 서블릿 매핑 3(예제 12-14) -->
   <servlet>
     <description></description>
     <display-name>FrontController</display-name>
@@ -129,7 +118,6 @@
     <servlet-name>MemberAuth</servlet-name>
     <url-pattern>/12Servlet/MemberAuth.mvc</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <display-name>UploadProcess</display-name>
     <servlet-name>UploadProcess</servlet-name>
@@ -139,7 +127,6 @@
     <servlet-name>UploadProcess</servlet-name>
     <url-pattern>/13FileUpload/UploadProcess.do</url-pattern>
   </servlet-mapping>
-  <!-- 서블릿 매핑 4(예제 14-4) -->
   <servlet>
     <servlet-name>ListController</servlet-name>
     <servlet-class>model2.mvcboard.ListController</servlet-class>
@@ -147,5 +134,15 @@
   <servlet-mapping>
     <servlet-name>ListController</servlet-name>
     <url-pattern>/mvcboard/list.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WriteController</display-name>
+    <servlet-name>WriteController</servlet-name>
+    <servlet-class>model2.mvcboard.WriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WriteController</servlet-name>
+    <url-pattern>/mvcboard/write.do</url-pattern>
   </servlet-mapping>
 </web-app>
