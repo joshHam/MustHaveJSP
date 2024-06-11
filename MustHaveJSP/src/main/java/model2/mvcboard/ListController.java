@@ -21,7 +21,7 @@ public class ListController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// DAO 생성
 		MVCBoardDAO dao = new MVCBoardDAO();
 		
@@ -69,7 +69,7 @@ public class ListController extends HttpServlet {
 		// 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
 		req.setAttribute("boardLists", boardLists);
 		req.setAttribute("map", map);
-		req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, res);
+		req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, resp);
 		
 		
 		//res.getWriter().append("Served at: ").append(req.getContextPath());

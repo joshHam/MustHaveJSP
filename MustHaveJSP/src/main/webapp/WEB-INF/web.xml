@@ -140,9 +140,53 @@
     <display-name>WriteController</display-name>
     <servlet-name>WriteController</servlet-name>
     <servlet-class>model2.mvcboard.WriteController</servlet-class>
+    <multipart-config>
+      <max-file-size>1048576</max-file-size>
+      <max-request-size>10485760</max-request-size>
+    </multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>WriteController</servlet-name>
     <url-pattern>/mvcboard/write.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewController</display-name>
+    <servlet-name>ViewController</servlet-name>
+    <servlet-class>model2.mvcboard.ViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewController</servlet-name>
+    <url-pattern>/mvcboard/View.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownloadController</display-name>
+    <servlet-name>DownloadController</servlet-name>
+    <servlet-class>model2.mvcboard.DownloadController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadController</servlet-name>
+    <url-pattern>/mvcboard/download.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PassController</display-name>
+    <servlet-name>PassController</servlet-name>
+    <servlet-class>model2.mvcboard.PassController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PassController</servlet-name>
+    <url-pattern>/mvcboard/pass.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditController</display-name>
+    <servlet-name>EditController</servlet-name>
+    <servlet-class>model2.mvcboard.EditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditController</servlet-name>
+    <url-pattern>/mvcboard/edit.do</url-pattern>
   </servlet-mapping>
 </web-app>

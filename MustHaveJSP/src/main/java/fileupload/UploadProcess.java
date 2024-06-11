@@ -21,18 +21,18 @@ public class UploadProcess extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			String saveDirectory = getServletContext().getRealPath("/Uploads");
-			String originalFileName = FileUtil.uploadFile(request, saveDirectory);
+			String originalFileName = FileUtil.uploadFile(req, saveDirectory);
 			String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
-			insertMyFile(request, originalFileName, savedFileName);
-			response.sendRedirect("FileList.jsp");
+			insertMyFile(req, originalFileName, savedFileName);
+			resp.sendRedirect("FileList.jsp");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-			request.setAttribute("errorMessage", "파일 업로드 오류");
-			request.getRequestDispatcher("FileUploadMain.jsp").forward(request, response);
+			req.setAttribute("errorMessage", "파일 업로드 오류");
+			req.getRequestDispatcher("FileUploadMain.jsp").forward(req, resp);
 		}
 	}
 	

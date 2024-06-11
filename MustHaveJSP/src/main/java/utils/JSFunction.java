@@ -1,5 +1,8 @@
 package utils;
 
+import java.io.PrintWriter;
+
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.jsp.JspWriter;	
 
 public class JSFunction {					//도우미 클래스
@@ -28,5 +31,59 @@ public class JSFunction {					//도우미 클래스
 		}
 		catch(Exception e) {}
 	}
+	
+	//메시지 알림창을 띄운 후 명시한 URL 로 이동한다
+	public static void alertLocation(HttpServletResponse resp, String msg, String url) {
+		try {
+			resp.setContentType("text/html;charset=UTF-8");
+			PrintWriter writer = resp.getWriter();
+			String script = ""
+						+ "<script>"
+						+ "		alert('" + msg + "');"
+						+ "    location.href='" + url + "';"
+						+ "</script>";
+			writer.print(script);
+		}
+		catch(Exception e) {}
+	}
+	
+	// 메시지 알림창을 띄운 후 이전 페이지로 돌아간다.
+	public static void alertBack(HttpServletResponse resp, String msg) {
+		try {
+			resp.setContentType("text/html;charset=UTF-8");
+			PrintWriter writer = resp.getWriter();
+			String script = ""
+						+ "<script>"
+						+ "		alert('" + msg + "');"
+						+ "		history.back();"
+						+ "</script>";
+			writer.print(script);
+		}
+		catch(Exception e) {}
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

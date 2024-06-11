@@ -46,8 +46,22 @@ public class JDBConnect {
 			e.printStackTrace();
 		}
 	}
-	
-	// 세 번째 생성자 196ㅔ
+	// 세 번째 생성자 196ㅔ	
+	public void close() {
+		try {
+			if (rs != null) rs.close();
+			if(stmt != null) stmt.close();
+			if(psmt != null) psmt.close();
+			if(con != null) con.close();
+			
+			System.out.println("JDBC 자원 해제");
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 	public JDBConnect(ServletContext application) {
 		try {
 			//JDBC 드라이버 로드
