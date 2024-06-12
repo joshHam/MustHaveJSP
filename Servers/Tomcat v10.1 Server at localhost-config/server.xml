@@ -36,18 +36,7 @@
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
     -->
-        <Resource auth="Container"
-              driverClassName="oracle.jdbc.OracleDriver"
-              type="javax.sql.DataSource" 
-              initialSize="0"
-              minIdle="5"
-              maxTotal="20"
-              maxIdle="20"
-              maxWaitMillis="5000"
-              url="jdbc:oracle:thin:@localhost:1521:xe"
-              name="dbcp_myoracle"
-              username="c##musthave"
-              password="1234" />
+        <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" minIdle="5" name="dbcp_myoracle" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="c##musthave"/>
     
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
   </GlobalNamingResources>
@@ -153,7 +142,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="MustHaveJSP" path="/MustHaveJSP" reloadable="true" source="org.eclipse.jst.jee.server:MustHaveJSP"/></Host>
+      <Context docBase="MustHaveJSP" path="/MustHaveJSP" reloadable="true" source="org.eclipse.jst.jee.server:MustHaveJSP"/><Context docBase="shop" path="/shop" reloadable="true" source="org.eclipse.jst.jee.server:shop"/></Host>
     </Engine>
   </Service>
 </Server>

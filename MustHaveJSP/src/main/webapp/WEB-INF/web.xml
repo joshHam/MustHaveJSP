@@ -149,6 +149,7 @@
     <servlet-name>WriteController</servlet-name>
     <url-pattern>/mvcboard/write.do</url-pattern>
   </servlet-mapping>
+<!--   
   <servlet>
     <description></description>
     <display-name>ViewController</display-name>
@@ -157,9 +158,10 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ViewController</servlet-name>
-    <url-pattern>/mvcboard/View.do</url-pattern>
+    <url-pattern>/mvcboard/view.do</url-pattern>
   </servlet-mapping>
-  <servlet>
+ -->  
+<!--   <servlet>
     <description></description>
     <display-name>DownloadController</display-name>
     <servlet-name>DownloadController</servlet-name>
@@ -169,6 +171,8 @@
     <servlet-name>DownloadController</servlet-name>
     <url-pattern>/mvcboard/download.do</url-pattern>
   </servlet-mapping>
+ --> 
+ <!-- 
   <servlet>
     <description></description>
     <display-name>PassController</display-name>
@@ -179,6 +183,8 @@
     <servlet-name>PassController</servlet-name>
     <url-pattern>/mvcboard/pass.do</url-pattern>
   </servlet-mapping>
+   -->
+<!--   
   <servlet>
     <description></description>
     <display-name>EditController</display-name>
@@ -189,4 +195,5 @@
     <servlet-name>EditController</servlet-name>
     <url-pattern>/mvcboard/edit.do</url-pattern>
   </servlet-mapping>
+ -->  
 </web-app>
